@@ -13,47 +13,67 @@
   <header>
     <div id="back">
       <img src="" alt="">
-      <span>Voltar</span>
+      <span>← Voltar</span>
     </div>
     <h1>Compras da semana</h1>
   </header>
   
   <main>
-    <div>
+    <div class="add-item">
       <input type="text" placeholder="Adicione um novo item">
       <button>Adicionar item</button>
     </div>
 
     <div id="items">
-      <div class="item">
+      <label class="item">
         <input type="checkbox" id="cbox1" value="first_checkbox">
-        <label for="cbox1">Pão de forma</label>
-        <img src="assets/icons/trash.svg" alt="Remover item">
-      </div>
+        <span class="check">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.5 7L4.25 8.75L9.5 3.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span for="cbox1">Pão de forma</span>
+        <img class="remove" src="assets/icons/trash.svg" alt="Remover item">
+      </label>
 
-      <div class="item">
+      <label class="item">
         <input type="checkbox" id="cbox2" value="second_checkbox">
-        <label for="cbox2">Café preto</label>
-        <img src="assets/icons/trash.svg" alt="Remover item">
-      </div>
+        <span class="check">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.5 7L4.25 8.75L9.5 3.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span for="cbox2">Café preto</span>
+        <img class="remove" src="assets/icons/trash.svg" alt="Remover item">
+      </label>
 
-      <div class="item">
+      <label class="item">
         <input type="checkbox" id="cbox3" value="third_checkbox">
-        <label for="cbox3">Suco de laranja</label>
-        <img src="assets/icons/trash.svg" alt="Remover item">
-      </div>
+        <span class="check">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.5 7L4.25 8.75L9.5 3.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span for="cbox3">Suco de laranja</span>
+        <img class="remove" src="assets/icons/trash.svg" alt="Remover item">
+      </label>
 
-      <div class="item">
+      <label class="item">
         <input type="checkbox" id="cbox4" value="fourth_checkbox">
-        <label for="cbox4">Bolacha</label>
-        <img src="assets/icons/trash.svg" alt="Remover item">
-      </div>
+        <span class="check">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.5 7L4.25 8.75L9.5 3.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span for="cbox4">Bolacha</span>
+        <img class="remove" src="assets/icons/trash.svg" alt="Remover item">
+      </label>
     </div>
     
     <div class="error">
       <img src="assets/icons/warning.svg" alt="Ícone de atenção">
       <span>O item foi removido da lista</span>
-      <img src="assets/icons/delete.svg" alt="">
+      <img class="remove" src="assets/icons/delete.svg" alt="">
     </div>
 
   </main>
