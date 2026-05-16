@@ -1,7 +1,16 @@
 // Acessando elementos no DOM
+const form = document.querySelector("form") // acessa formulario
 const newItem = document.getElementById("newItem") // acessa input form
 const list = document.getElementById("items") // acessa lista
-const form = document.querySelector("form") // acessa formulario
+const removeMessage = document.querySelector(".remove") // acessa mensagem erro
+const oldTrashIcons = document.querySelectorAll(".removeIcon") // acessa todos os icones de lixeira existentes
+
+oldTrashIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    const itemToRemove = icon.closest("label")
+    deleteItem(itemToRemove)
+  })
+})
 
 // Enviar o item
 form.addEventListener("submit", (event) => {
@@ -14,6 +23,11 @@ form.addEventListener("submit", (event) => {
 
   // evitar que a página recarregue
   event.preventDefault()
+
+  // validação
+  if (newItem.value.trim() === "") {
+    return
+  }
 
   // configuração
   textSpan.textContent = newItem.value // pega o conteudo do newItem e adiciona no textSpan
@@ -30,7 +44,7 @@ form.addEventListener("submit", (event) => {
 `
 
   // montando ícone de remover item
-  trashIcon.classList.add("remove")
+  trashIcon.classList.add("removeIcon")
   trashIcon.src = "assets/icons/trash.svg"
   trashIcon.alt = "Remover item"
 
@@ -41,9 +55,35 @@ form.addEventListener("submit", (event) => {
   itemLabel.appendChild(trashIcon)
   list.prepend(itemLabel) // monta o label dentro da lista
 
+  // adiciona escuta de clique no botão de remover
+  trashIcon.addEventListener("click", () => {
+    deleteItem(itemLabel)
+  })
+
   // mensagem de sucesso
   console.log("item enviado")
+
+  const button = form.querySelector("button")
+  button.textContent = "Adicionado ✔︎"
+  button.style.opacity = "0.6"
+
+  setTimeout(() => {
+    button.textContent = "Adicionar item"
+    button.style.opacity = "1"
+  }, 1000)
 
   // limpando o formulário após envio
   newItem.value = ""
 })
+
+function deleteItem(item) {
+  // apaga o label da lista
+  item.remove()
+
+  // mostra mensagem
+  removeMessage.style.opacity = "1"
+
+  setTimeout(() => {
+    removeMessage.style.opacity = "0"
+  }, 3000)
+}

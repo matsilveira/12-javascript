@@ -60,7 +60,7 @@ header {
   display: none;
 }
 
-.remove {
+.removeIcon {
   cursor: pointer;
 }
 
@@ -159,7 +159,7 @@ input[type="checkbox"] {
   }
 }
 
-.error {
+.remove {
   opacity: 0;
   width: 100%;
   height: 100%;
